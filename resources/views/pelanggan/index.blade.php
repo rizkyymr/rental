@@ -27,13 +27,13 @@
 
             <tbody>
                 @forelse ($pelanggan as $index => $pelanggan)
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">{{ $index + 1 }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $pelanggan->nama }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $pelanggan->alamat }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $pelanggan->noTelp }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $pelanggan->email }}</td>
-                        <td class="flex justify-center border border-gray-300 px-4 py-2">
+                    <tr class="border border-gray-300 text-center">
+                        <td class="border px-4 py-2">{{ $index + 1 }}</td>
+                        <td class="border px-4 py-2">{{ $pelanggan->nama }}</td>
+                        <td class="border px-4 py-2">{{ $pelanggan->alamat }}</td>
+                        <td class="border px-4 py-2">{{ $pelanggan->noTelp }}</td>
+                        <td class="border px-4 py-2">{{ $pelanggan->email }}</td>
+                        <td class="flex justify-center border px-4 py-2">
                             <a 
                                 href="{{  route('pelanggan.edit', $pelanggan->idCustomer) }}" 
                                 class="bg-green-400 hover:bg-green-300 text-white rounded px-4 py-2 me-2">

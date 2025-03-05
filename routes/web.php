@@ -5,14 +5,17 @@ use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\SepedaController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\GuestController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
-Route::get('/', function () {
-return view('welcome');
-});
+Route::get('/', [GuestController::class, 'index'])->name('guest');
 
 Route::middleware('guest')->group(function () {
+
+    Route::get('welcome', [WelcomeController::class, 'index'])->name('welcome');
+
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('login', [LoginController::class, 'login']);
     Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');

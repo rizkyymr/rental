@@ -29,15 +29,15 @@
 
             <tbody>
                 @forelse ($transaksi as $index => $transaksi)
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">{{ $index + 1 }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $transaksi->pelanggan->nama }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $transaksi->sepeda->merk }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $transaksi->tanggalSewa }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $transaksi->tanggalKembali }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $transaksi->totalBiaya }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $transaksi->status }}</td>
-                        <td class="flex justify-center border border-gray-300 px-4 py-2">
+                    <tr class="border border-gray-300 text-center">
+                        <td class="border px-4 py-2">{{ $index + 1 }}</td>
+                        <td class="border px-4 py-2">{{ $transaksi->pelanggan->nama }}</td>
+                        <td class="border px-4 py-2">{{ $transaksi->sepeda->merk }}</td>
+                        <td class="border px-4 py-2">{{ $transaksi->tanggalSewa }}</td>
+                        <td class="border px-4 py-2">{{ $transaksi->tanggalKembali }}</td>
+                        <td class="border px-4 py-2">{{ $transaksi->totalBiaya }}</td>
+                        <td class="border px-4 py-2">{{ $transaksi->status }}</td>
+                        <td class="flex justify-center border px-4 py-2">
                             <a 
                                 href="{{ route('transaksi.edit', $transaksi->idRental) }}"
                                 class="bg-green-400 hover:bg-green-300 text-white px-4 py-2 rounded me-4">

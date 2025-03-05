@@ -29,15 +29,17 @@
 
             <tbody>
                 @forelse ($sepeda as $index => $sepeda)
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">{{ $index + 1 }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $sepeda->merk }}</td>
-                        <td class="border border-gray-300 px-4 py-2"><img src="{{ asset($sepeda->foto) }}" height="150px" width="150px" alt=""></td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $sepeda->tipe }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $sepeda->warna }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $sepeda->sewa }}</td>
-                        <td class="border border-gray-300 px-4 py-2">{{ $sepeda->status }}</td>
-                        <td class="flex justify-center center border-gray-300 px-4 py-2 my-14" rowspan="2">
+                    <tr class="border border-gray-300 text-center">
+                        <td class="border px-4 py-2">{{ $index + 1 }}</td>
+                        <td class="border px-4 py-2">{{ $sepeda->merk }}</td>
+                        <td class="border px-4 py-2 justify-center items-center">
+                            <img src="{{ asset($sepeda->foto) }}" height="150px" width="150px" alt="">
+                        </td>
+                        <td class="border px-4 py-2">{{ $sepeda->tipe }}</td>
+                        <td class="border px-4 py-2">{{ $sepeda->warna }}</td>
+                        <td class="border px-4 py-2">{{ $sepeda->sewa }}</td>
+                        <td class="border px-4 py-2">{{ $sepeda->status }}</td>
+                        <td class="flex justify-center items-center px-4 py-2 my-14" rowspan="2">
                             <a 
                                 href="{{  route('sepeda.edit', $sepeda->idSepeda) }}" 
                                 class="bg-green-400 hover:bg-green-300 text-white rounded px-4 py-2 me-2">
@@ -54,7 +56,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="6">BELUM ADA DATA</td>
+                        <td colspan="8">BELUM ADA DATA</td>
                     </tr>
                 @endforelse
             </tbody>

@@ -31,7 +31,7 @@
         <div class="bg-black bg-opacity-50 p-10 rounded-lg text-center text-white">
             <h1 class="font-bold text-4xl">SEWA SEPEDA UNTUK PETUALANGAN ANDA</h1>
             <p class="text-gray-200 mt-4">Nikmati pengalaman bersepda yang menyenagkan dengan layanan terbaik kami.</p>
-            <a href="#" class="bg-red-600 hover:bg-red-500 rounded px-4 py-2 mt-6 inline-block">Lihat Sepeda</a>
+            <a href="#sepeda" class="bg-red-600 hover:bg-red-500 rounded px-4 py-2 mt-6 inline-block">Lihat Sepeda</a>
         </div>
     </section>
 

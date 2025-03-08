@@ -78,10 +78,33 @@ class SepedaController extends Controller
             'tipe' => 'required',
             'warna' => 'required',
             'sewa' => 'required',
-            'status' => 'required'
+            'status' => 'required',
         ]);
+    
         $sepeda = Sepeda::findOrFail($id);
-        $sepeda->update($request->all());
+    
+        if ($request->hasFile('foto')) {
+            $request->validate([
+                'foto' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            ]);
+    
+            if ($sepeda->foto && file_exists(public_path($sepeda->foto))) {
+                unlink(public_path($sepeda->foto));
+            }
+    
+            $imageName = time().'.'.$request->foto->extension();
+            $request->foto->move(public_path('images'), $imageName);
+            $sepeda->foto = 'images/'.$imageName;
+        }
+    
+        $sepeda->update([
+            'merk' => $request->merk,
+            'tipe' => $request->tipe,
+            'warna' => $request->warna,
+            'sewa' => $request->sewa,
+            'status' => $request->status,
+        ]);
+    
         return redirect()->route('sepeda.index');
     }
 

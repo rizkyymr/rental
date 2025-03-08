@@ -27,7 +27,7 @@
     </nav>
 
     {{-- home --}}
-    <section id="home" class="flex items-center justify-center h-screen bg-gray-200">
+    <section id="home" class="flex items-center justify-center h-screen bg-cover bg-center" style="background-image: url('{{ asset('images/welcome.jpg') }}')">
         <div class="bg-black bg-opacity-50 p-10 rounded-lg text-center text-white">
             <h1 class="font-bold text-4xl">SEWA SEPEDA UNTUK PETUALANGAN ANDA</h1>
             <p class="text-gray-200 mt-4">Nikmati pengalaman bersepda yang menyenagkan dengan layanan terbaik kami.</p>
@@ -73,12 +73,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap6 mt-10">
                 @foreach ($sepeda as $item)
                     <div class="bg-white shadow-lg rounded-lg p-6 text-center m-5">
-                        <img src="{{ asset($item->foto) }}" alt="{{ $item->merk }}" class="h-40 w-full object-cover rounded-md">
+                        <img src="{{ asset($item->foto) }}" alt="{{ $item->merk }}" class="h-100 w-full object-contain rounded-md">
                         <h3 class="text-xl font-semibold mt-4">{{ $item->merk }}</h3>
                         <p class="mt-2">Tipe: {{ $item->tipe }}</p>
                         <p class="mt-2">Warna: {{ $item->warna }}</p>
                         <p class="mt-2 font-bold">Sewa: Rp. {{ number_format($item->sewa, 0, ',', '.') }}</p>
-                        <a href="#" class="mt-4 inline-block bg-blue-600 hover:bg-blue-500 text-white rounded px-4 py-2">Sewa Sekarang</a>
+                        
                     </div>
                 @endforeach
             </div>

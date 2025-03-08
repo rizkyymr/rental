@@ -15,6 +15,9 @@
                     <label for="merk" class="block">MERK:</label>
                     <input type="text" class="border rounded p-2 w-full" name="merk" value="{{ ($sepeda->merk) }}">
 
+                    <label for="foto" class="block">FOTO:</label>
+                    <input type="file" class="border rounded p-2 w-full" name="foto" value="{{ ($sepeda->foto) }}">
+
                     <label for="tipe" class="block">TIPE:</label>
                     <input type="text" class="border rounded p-2 w-full" name="tipe" value="{{ ($sepeda->tipe) }}">
 

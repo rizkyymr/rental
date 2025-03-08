@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Transaksi;
 
 class BerandaController extends Controller
 {
@@ -11,7 +12,8 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $transaksi = Transaksi::with(['pelanggan', 'sepeda'])->latest()->get();
+        return view('dashboard', compact('transaksi'));
     }
 
     /**

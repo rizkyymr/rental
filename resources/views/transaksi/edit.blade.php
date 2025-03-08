@@ -8,8 +8,9 @@
         </div>
 
         <div class="mx-10">
-            <form action="{{ route('transaksi.store') }}" method="POST">
+            <form action="{{ route('transaksi.update', $transaksi->idRental) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="space-y-2">
                     <label for="nama" class="block">NAMA PELANGGAN:</label>
                     <select name="idCustomer" id="idCustomer" class="border rounded p-2 w-full">
@@ -49,7 +50,7 @@
                     </select>
 
                     <button class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded w-full">
-                        SAVE
+                        UPDATE
                     </button>
                 </div>
             </form>
